@@ -1,0 +1,122 @@
+{
+  "name": "asana-plugin",
+  "version": "20260331",
+  "built_at": "2026-03-31T09:42:27.349176+00:00",
+  "workspace_gid": "9526911872029",
+  "file_count": 20,
+  "files": {
+    "SKILL.md": {
+      "size_bytes": 5602,
+      "sha256": "48985de46c219eb4fdf8038cbab278f1b6e8aec1e79b37c6378441d6d9eec726"
+    },
+    "TEST-MATRIX.md": {
+      "size_bytes": 12273,
+      "sha256": "1d2098015ef817fc58854796868090ab4411344f1d0ec269c4e7417dd397b021"
+    },
+    "agent/INSTALL.md": {
+      "size_bytes": 7992,
+      "sha256": "6dd64e1d069b2218c421a78d540b92186aca2cb1717ba0955e944fc187c5408c"
+    },
+    "evals/evals.json": {
+      "size_bytes": 6192,
+      "sha256": "6496a9713a54f8522da86e2a4363bd525ee9d1efbd7e8ea5e94a747b7392dfba"
+    },
+    "protocols/DAILY-UPDATE.md": {
+      "size_bytes": 2706,
+      "sha256": "64daa9d64e9c505b7da4771de2f7b942290d59816666737806efa13e292b6898"
+    },
+    "protocols/INBOX.md": {
+      "size_bytes": 3288,
+      "sha256": "d51d61871d9bd583bf1de9b6a7649b8b70c10d402ab00e94f347b78b3ca24187"
+    },
+    "protocols/NOTIFICATION-HYGIENE.md": {
+      "size_bytes": 3444,
+      "sha256": "bff506d46c81fd6c4a7bb924f0ce30097d0ca5b84e52ab22af7a78854523ee16"
+    },
+    "protocols/PROGRESS-FUNNEL.md": {
+      "size_bytes": 5118,
+      "sha256": "ebb2f534e72ab3d1b0335c7b456d66298b2734b851c33f201e94953e039f21fe"
+    },
+    "protocols/TASK-PREP.md": {
+      "size_bytes": 2285,
+      "sha256": "ec328b173176f90c33bb324559b77a05e5527d219a6dbc41031b1a6201004e41"
+    },
+    "skills/README.md": {
+      "size_bytes": 3673,
+      "sha256": "f81d95b311b3a40f0809c6ec7bd9eb5ff2db24e94c389eb8c82e4cd9bd0b81d1"
+    },
+    "skills/combos/SKILL.md": {
+      "size_bytes": 11202,
+      "sha256": "595352c94c1e876d13b0a6d756092a3d5344f3e841d241b3e5f872ef2c2928a7"
+    },
+    "skills/commenting/SKILL.md": {
+      "size_bytes": 5829,
+      "sha256": "0a56697f4c4c048a3cefc3cdc328166808d23263eb14d2c0ca213dfd25543e37"
+    },
+    "skills/context-validate/SKILL.md": {
+      "size_bytes": 3656,
+      "sha256": "c4d72a848aecdfb3f5395d6cc81c3539369f9b75167978448240c28606fd538e"
+    },
+    "skills/creating/SKILL.md": {
+      "size_bytes": 6821,
+      "sha256": "934846d7b28fd403cbfbc8a4203969c36e9230d8e32105d5672c839e3841a793"
+    },
+    "skills/maintenance/SKILL.md": {
+      "size_bytes": 5252,
+      "sha256": "49cc6fab6ef59b5a3a2f0f2dcae320c2c15aafe21d55a499318472020c5b7e11"
+    },
+    "skills/prioritizing/SKILL.md": {
+      "size_bytes": 4108,
+      "sha256": "a063544756bdd9d7668811b4b6c92e2f030d8890944621780c0dadd153fe8df7"
+    },
+    "skills/searching/SKILL.md": {
+      "size_bytes": 6513,
+      "sha256": "8937ce4aef504677f2edd008019cb9af5f39c7419f4eef3c1a332323e4060944"
+    },
+    "skills/structuring/SKILL.md": {
+      "size_bytes": 4546,
+      "sha256": "ec259e06bad257a0de6bff3130f6b557224cd637f7855c476af6cf8b8b6e0b80"
+    },
+    "skills/updating/SKILL.md": {
+      "size_bytes": 6689,
+      "sha256": "6a663c972cbc8e0f29ba07333b426993201bc46c7f60cae7f6e81a230c7b67d7"
+    },
+    "skills/work-tracking/SKILL.md": {
+      "size_bytes": 3684,
+      "sha256": "d7395d7e19d10a0c001f90fafdeec2015295faef54d27973d29ccee7999263cf"
+    }
+  },
+  "required_present": [
+    "SKILL.md",
+    "skills/README.md",
+    "skills/searching/SKILL.md",
+    "skills/creating/SKILL.md",
+    "skills/updating/SKILL.md",
+    "skills/commenting/SKILL.md",
+    "skills/structuring/SKILL.md",
+    "skills/prioritizing/SKILL.md",
+    "skills/combos/SKILL.md",
+    "skills/work-tracking/SKILL.md",
+    "skills/context-validate/SKILL.md",
+    "skills/maintenance/SKILL.md",
+    "protocols/PROGRESS-FUNNEL.md",
+    "protocols/TASK-PREP.md",
+    "protocols/NOTIFICATION-HYGIENE.md",
+    "protocols/DAILY-UPDATE.md",
+    "protocols/INBOX.md",
+    "agent/INSTALL.md",
+    "evals/evals.json"
+  ],
+  "optional_present": [
+    "TEST-MATRIX.md"
+  ],
+  "optional_absent": [
+    "index/PROJECTS.md",
+    "index/FIELDS.md",
+    "index/PLAYERS.md",
+    "index/options/OPTIONS-core.md",
+    "index/options/OPTIONS-work.md",
+    "index/options/OPTIONS-feature.md",
+    "agent/CONTRIBUTIONS.md"
+  ]
+}

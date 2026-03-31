@@ -1,0 +1,160 @@
+{
+  "skill_name": "asana-plugin",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "What am I working on today? I'm Malkio.",
+      "expected_output": "Agent searches Asana for Malkio's Addressing tasks (assignee=me or assignee=Malkio GID, Stage=Addressing, completed=false). Returns a prioritized list sorted by Q-rank/due date. If Addressing is empty, cascades to Focus. Does NOT return all tasks without a stage filter.",
+      "assertions": [
+        {
+          "text": "Agent uses asana_search_tasks with Stage=Addressing filter (not unbounded)",
+          "passed": null,
+          "evidence": null
+        },
+        {
+          "text": "Results are sorted by due date or Q-rank, not random order",
+          "passed": null,
+          "evidence": null
+        },
+        {
+          "text": "If Addressing is empty, agent checks Focus before reporting nothing to work on",
+          "passed": null,
+          "evidence": null
+        },
+        {
+          "text": "Agent does NOT call asana_get_tasks or search without a stage filter",
+          "passed": null,
+          "evidence": null
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Create a task: we need to redesign the onboarding email sequence. It's pretty urgent and Po should drive it.",
+      "expected_output": "Agent creates task with [BUILD] or similar prefix, sets Driver=Po (NOT assignee), Stage=Unsorted or Todo, Priority=Q1/Q2 based on urgency. Assignee is NOT set. Task goes to SteadyStars Development or D&S Daily Tasks. Asks about DoD/project if unclear.",
+      "assertions": [
+        {
+          "text": "Task is created with a clear, actionable name",
+          "passed": null,
+          "evidence": null
+        },
+        {
+          "text": "Assignee is NOT set at creation (Driver field used instead)",
+          "passed": null,
+          "evidence": null
+        },
+        {
+          "text": "Priority reflects the urgency signal from the prompt",
+          "passed": null,
+          "evidence": null
+        },
+        {
+          "text": "Agent does not set followers speculatively",
+          "passed": null,
+          "evidence": null
+        },
+        {
+          "text": "start_at/due_at or start_on/due_on is either set or agent asks about deadline",
+          "passed": null,
+          "evidence": null
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Task 1213243591510417 is done — let's close it out.",
+      "expected_output": "Agent runs task-prep first (reads task + stories). Checks: all subtasks complete, DoD Status=Ready, artifact links present, no active blockers. If all good: posts summary comment, moves Stage to Resolved. If gates not met: surfaces what's missing specifically. Does NOT just mark completed=true without checking gates.",
+      "assertions": [
+        {
+          "text": "Agent calls asana_get_task before any update (task-prep)",
+          "passed": null,
+          "evidence": null
+        },
+        {
+          "text": "Agent calls asana_get_stories_for_task to read comment history",
+          "passed": null,
+          "evidence": null
+        },
+        {
+          "text": "Agent checks DoD Status before marking resolved",
+          "passed": null,
+          "evidence": null
+        },
+        {
+          "text": "Agent checks subtask completion before marking resolved",
+          "passed": null,
+          "evidence": null
+        },
+        {
+          "text": "A summary comment is posted before or alongside the stage update",
+          "passed": null,
+          "evidence": null
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Show me what's blocking the team on SteadyStars Development right now.",
+      "expected_output": "Agent searches SteadyStars Development project (GID 1213243591510417) for Roadblocked tasks. Returns results with blocker context. Does not pull all project tasks. Applies project filter + Stage=Roadblocked filter. Identifies Driver/Owner for each blocked task as the contact.",
+      "assertions": [
+        {
+          "text": "Agent uses projects_any filter set to SteadyStars Development GID",
+          "passed": null,
+          "evidence": null
+        },
+        {
+          "text": "Agent filters by Stage=Roadblocked (not all stages)",
+          "passed": null,
+          "evidence": null
+        },
+        {
+          "text": "Response includes who to contact for each blocker (Driver/Owner/Assignee)",
+          "passed": null,
+          "evidence": null
+        },
+        {
+          "text": "Agent does not load the full project task list without a stage filter",
+          "passed": null,
+          "evidence": null
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "I just realized we have no task for the API rate limiting issue we discussed. The context is in the SteadyStars NotebookLM. Can you set it up properly?",
+      "expected_output": "Agent: (1) checks if a related task already exists via typeahead, (2) references skills/context-validate to query NotebookLM for context on the issue, (3) creates task with [SOLVE] or [FIX] prefix, populates description from retrieved context, marks it for validation before writing. Does NOT create a vague task without attempting to gather context.",
+      "assertions": [
+        {
+          "text": "Agent searches for existing task before creating a new one",
+          "passed": null,
+          "evidence": null
+        },
+        {
+          "text": "Agent references or uses context-validate skill for NotebookLM lookup",
+          "passed": null,
+          "evidence": null
+        },
+        {
+          "text": "Task name has appropriate prefix ([SOLVE] or [FIX])",
+          "passed": null,
+          "evidence": null
+        },
+        {
+          "text": "Assignee is not set (Driver used instead if context identifies owner)",
+          "passed": null,
+          "evidence": null
+        },
+        {
+          "text": "Context from external sources is presented for validation, not silently written",
+          "passed": null,
+          "evidence": null
+        }
+      ],
+      "files": []
+    }
+  ]
+}
