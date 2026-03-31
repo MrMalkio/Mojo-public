@@ -1,9 +1,9 @@
 {
   "name": "asana-plugin",
   "version": "1.0.1-CC",
-  "built_at": "2026-03-31T11:07:36.298380+00:00",
+  "built_at": "2026-03-31T14:39:52.789823+00:00",
   "workspace_gid": "9526911872029",
-  "file_count": 34,
+  "file_count": 36,
   "files": {
     "README.md": {
       "size_bytes": 9489,
@@ -32,6 +32,14 @@
     "dist/asana-plugin-1.0.0-CC.tar.gz": {
       "size_bytes": 94424,
       "sha256": "5cf8769bf2b0a2b86c013e03695f9e40beaa0ccc249f1fb7fb2dd7721e22c50e"
+    },
+    "dist/asana-plugin-1.0.1-CC-manifest.json": {
+      "size_bytes": 6200,
+      "sha256": "1a0a217bbf941674b570a161ace2467f5c2b68ec95b5df666f7eeac49f04d487"
+    },
+    "dist/asana-plugin-1.0.1-CC.tar.gz": {
+      "size_bytes": 196520,
+      "sha256": "c0c9508791945e79402e3833ce71cd0c975311dfca9de8050e2bc370a9aaa402"
     },
     "dist/asana-plugin-20260331-manifest.json": {
       "size_bytes": 4077,
@@ -98,8 +106,8 @@
       "sha256": "f81d95b311b3a40f0809c6ec7bd9eb5ff2db24e94c389eb8c82e4cd9bd0b81d1"
     },
     "skills/combos/SKILL.md": {
-      "size_bytes": 11202,
-      "sha256": "595352c94c1e876d13b0a6d756092a3d5344f3e841d241b3e5f872ef2c2928a7"
+      "size_bytes": 12048,
+      "sha256": "5bd068800d13b9a2166a939281e478fb296a499d081ccc82bd66d82386590bf8"
     },
     "skills/combos/project-audit.md": {
       "size_bytes": 8760,
@@ -152,6 +160,7 @@
     "skills/structuring/SKILL.md",
     "skills/prioritizing/SKILL.md",
     "skills/combos/SKILL.md",
+    "skills/combos/project-audit.md",
     "skills/work-tracking/SKILL.md",
     "skills/context-validate/SKILL.md",
     "skills/maintenance/SKILL.md",

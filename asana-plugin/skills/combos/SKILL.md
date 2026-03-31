@@ -254,6 +254,26 @@ See `skills/prioritizing/SKILL.md` for full steps. Triggered at: intake, stage u
 
 ---
 
+## `project-audit` — Redundancy, Duplicate & Dependency Review
+
+Use when: a project feels bloated, has suspected duplicate tasks, unclear dependencies, or needs a structural health check before a sprint.
+
+See `skills/combos/project-audit.md` for full 6-phase flow.
+
+Quick summary:
+```
+Phase 1 — Intake: fetch all tasks, build full snapshot
+Phase 2 — Analysis: score duplicates (≥80% name match), redundancy, deps, structure gaps, description quality
+Phase 3 — Build Artifact: HTML progress tracker written to Mojo/audits/
+Phase 4 — Present Options: show proposed plan, confirm with user
+Phase 5 — Execute: field fixes → deps → subtasks → merges → new tasks
+Phase 6 — Handoff: update artifact, post project status, mark complete
+```
+
+Multi-agent: any agent reads the artifact checkpoint and continues from last step.
+
+---
+
 ## `agent-session-start` — Full Session Init
 
 ```

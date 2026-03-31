@@ -47,6 +47,7 @@ REQUIRED_FILES = [
     "skills/structuring/SKILL.md",
     "skills/prioritizing/SKILL.md",
     "skills/combos/SKILL.md",
+    "skills/combos/project-audit.md",
     "skills/work-tracking/SKILL.md",
     "skills/context-validate/SKILL.md",
     "skills/maintenance/SKILL.md",
