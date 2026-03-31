@@ -264,7 +264,7 @@ Quick summary:
 ```
 Phase 1 — Intake: fetch all tasks, build full snapshot
 Phase 2 — Analysis: score duplicates (≥80% name match), redundancy, deps, structure gaps, description quality
-Phase 3 — Build Artifact: HTML progress tracker written to Mojo/audits/
+Phase 3 — Build Artifact: HTML progress tracker written to audits/ in the agent's workspace folder
 Phase 4 — Present Options: show proposed plan, confirm with user
 Phase 5 — Execute: field fixes → deps → subtasks → merges → new tasks
 Phase 6 — Handoff: update artifact, post project status, mark complete

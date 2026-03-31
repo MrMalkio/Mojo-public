@@ -109,7 +109,7 @@ Generate a single-file HTML artifact as the audit workspace. This is the coordin
 - **Never delete this file between sessions.** It is the shared state.
 - Any agent picking up the audit reads the artifact first, continues from where the last agent stopped.
 - Human can open the artifact in browser, check/uncheck items, add notes. Agent reads their changes on next session.
-- Store at: `Mojo/audits/asana-audit-{project-slug}-{date}.html`
+- Store at: `audits/asana-audit-{project-slug}-{date}.html` relative to the agent's current workspace folder. Create `audits/` if it doesn't exist. Ask the user for their workspace path if unknown.
 
 ---
 
@@ -200,7 +200,7 @@ When session ends before audit is complete:
 asana_get_project → asana_get_project_sections → asana_search_tasks (paginated) → asana_get_task (for subtasks)
 
 # Phase 3
-Write artifact to Mojo/audits/
+Write artifact to audits/ in the agent's workspace folder
 
 # Phase 5 — field fixes
 update_tasks (batch, UI connector)
