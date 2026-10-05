@@ -1,0 +1,12 @@
+{
+  "r1": {
+    "reviewed": true,
+    "title": "First review",
+    "owner": "mallory"
+  },
+  "r2": {
+    "reviewed": true,
+    "title": "Second review",
+    "owner": "bob"
+  }
+}

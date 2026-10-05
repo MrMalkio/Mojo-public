@@ -1,0 +1,399 @@
+{
+  "schema_version": 1,
+  "nodes": [
+    {
+      "id": "project:review-fixture",
+      "kind": "product",
+      "name": "Synthetic review fixture"
+    },
+    {
+      "id": "repo:fixture",
+      "kind": "repository",
+      "name": "Fixture repository",
+      "repo": "repo:fixture"
+    },
+    {
+      "id": "capability:review",
+      "kind": "capability",
+      "name": "Review status display and update"
+    },
+    {
+      "id": "instance:editable",
+      "kind": "instance",
+      "name": "Editable review toggle",
+      "repo": "repo:fixture",
+      "parity_group": "parity:review"
+    },
+    {
+      "id": "instance:readonly",
+      "kind": "instance",
+      "name": "Read-only review summary",
+      "repo": "repo:fixture",
+      "parity_group": "parity:review"
+    },
+    {
+      "id": "invariant:display",
+      "kind": "invariant",
+      "name": "Displayed review status equals saved state"
+    },
+    {
+      "id": "invariant:toggle",
+      "kind": "invariant",
+      "name": "Review toggle updates only the selected review status"
+    },
+    {
+      "id": "data:reviews",
+      "kind": "data",
+      "name": "In-memory review records"
+    },
+    {
+      "id": "function:store-snapshot",
+      "kind": "function",
+      "name": "ReviewStore.snapshot",
+      "repo": "repo:fixture",
+      "path": "review.py",
+      "symbol": "ReviewStore.snapshot",
+      "anchor": "review.store.snapshot"
+    },
+    {
+      "id": "function:store-set",
+      "kind": "function",
+      "name": "ReviewStore.set_reviewed",
+      "repo": "repo:fixture",
+      "path": "review.py",
+      "symbol": "ReviewStore.set_reviewed",
+      "anchor": "review.store.set-reviewed"
+    },
+    {
+      "id": "function:editable-render",
+      "kind": "function",
+      "name": "EditableReview.render",
+      "repo": "repo:fixture",
+      "path": "review.py",
+      "symbol": "EditableReview.render",
+      "anchor": "review.editable.render"
+    },
+    {
+      "id": "function:editable-toggle",
+      "kind": "function",
+      "name": "EditableReview.toggle",
+      "repo": "repo:fixture",
+      "path": "review.py",
+      "symbol": "EditableReview.toggle",
+      "anchor": "review.editable.toggle"
+    },
+    {
+      "id": "function:readonly-render",
+      "kind": "function",
+      "name": "ReadonlyReview.render",
+      "repo": "repo:fixture",
+      "path": "review.py",
+      "symbol": "ReadonlyReview.render",
+      "anchor": "review.readonly.render"
+    },
+    {
+      "id": "function:readonly-toggle",
+      "kind": "function",
+      "name": "ReadonlyReview.toggle",
+      "repo": "repo:fixture",
+      "path": "review.py",
+      "symbol": "ReadonlyReview.toggle",
+      "anchor": "review.readonly.toggle"
+    },
+    {
+      "id": "test:editable-display",
+      "kind": "test",
+      "name": "EditableReviewTests.test_render_shows_saved_review_state",
+      "repo": "repo:fixture",
+      "path": "tests/test_review.py",
+      "symbol": "EditableReviewTests.test_render_shows_saved_review_state",
+      "runner": "unittest",
+      "last_status": "unknown",
+      "critical": false
+    },
+    {
+      "id": "test:editable-toggle",
+      "kind": "test",
+      "name": "EditableReviewTests.test_toggle_changes_only_reviewed_field",
+      "repo": "repo:fixture",
+      "path": "tests/test_review.py",
+      "symbol": "EditableReviewTests.test_toggle_changes_only_reviewed_field",
+      "runner": "unittest",
+      "last_status": "unknown",
+      "critical": true
+    },
+    {
+      "id": "test:editable-roundtrip",
+      "kind": "test",
+      "name": "EditableReviewTests.test_toggle_round_trip_preserves_records",
+      "repo": "repo:fixture",
+      "path": "tests/test_review.py",
+      "symbol": "EditableReviewTests.test_toggle_round_trip_preserves_records",
+      "runner": "unittest",
+      "last_status": "unknown",
+      "critical": false
+    },
+    {
+      "id": "test:editable-missing",
+      "kind": "test",
+      "name": "EditableReviewTests.test_missing_review_does_not_mutate_store",
+      "repo": "repo:fixture",
+      "path": "tests/test_review.py",
+      "symbol": "EditableReviewTests.test_missing_review_does_not_mutate_store",
+      "runner": "unittest",
+      "last_status": "unknown",
+      "critical": false
+    },
+    {
+      "id": "test:readonly-display",
+      "kind": "test",
+      "name": "ReadonlyReviewTests.test_render_shows_saved_review_state",
+      "repo": "repo:fixture",
+      "path": "tests/test_review.py",
+      "symbol": "ReadonlyReviewTests.test_render_shows_saved_review_state",
+      "runner": "unittest",
+      "last_status": "unknown",
+      "critical": false
+    },
+    {
+      "id": "test:readonly-refusal",
+      "kind": "test",
+      "name": "ReadonlyReviewTests.test_toggle_refuses_without_mutation",
+      "repo": "repo:fixture",
+      "path": "tests/test_review.py",
+      "symbol": "ReadonlyReviewTests.test_toggle_refuses_without_mutation",
+      "runner": "unittest",
+      "last_status": "unknown",
+      "critical": true
+    },
+    {
+      "id": "test:store-validation",
+      "kind": "test",
+      "name": "StoreTests.test_rejects_non_boolean_without_mutation",
+      "repo": "repo:fixture",
+      "path": "tests/test_review.py",
+      "symbol": "StoreTests.test_rejects_non_boolean_without_mutation",
+      "runner": "unittest",
+      "last_status": "unknown",
+      "critical": false
+    },
+    {
+      "id": "test:store-isolation",
+      "kind": "test",
+      "name": "StoreTests.test_snapshot_is_isolated_from_caller_mutation",
+      "repo": "repo:fixture",
+      "path": "tests/test_review.py",
+      "symbol": "StoreTests.test_snapshot_is_isolated_from_caller_mutation",
+      "runner": "unittest",
+      "last_status": "unknown",
+      "critical": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "project:review-fixture",
+      "target": "repo:fixture",
+      "relation": "contains"
+    },
+    {
+      "source": "repo:fixture",
+      "target": "capability:review",
+      "relation": "contains"
+    },
+    {
+      "source": "capability:review",
+      "target": "instance:editable",
+      "relation": "contains"
+    },
+    {
+      "source": "instance:editable",
+      "target": "capability:review",
+      "relation": "implements"
+    },
+    {
+      "source": "instance:editable",
+      "target": "function:editable-render",
+      "relation": "contains"
+    },
+    {
+      "source": "instance:editable",
+      "target": "function:editable-toggle",
+      "relation": "contains"
+    },
+    {
+      "source": "capability:review",
+      "target": "instance:readonly",
+      "relation": "contains"
+    },
+    {
+      "source": "instance:readonly",
+      "target": "capability:review",
+      "relation": "implements"
+    },
+    {
+      "source": "instance:readonly",
+      "target": "function:readonly-render",
+      "relation": "contains"
+    },
+    {
+      "source": "instance:readonly",
+      "target": "function:readonly-toggle",
+      "relation": "contains"
+    },
+    {
+      "source": "instance:editable",
+      "target": "test:editable-display",
+      "relation": "contains"
+    },
+    {
+      "source": "test:editable-display",
+      "target": "invariant:display",
+      "relation": "covers",
+      "evidence": "Assertion compares rendered review state with saved synthetic state"
+    },
+    {
+      "source": "instance:editable",
+      "target": "test:editable-toggle",
+      "relation": "contains"
+    },
+    {
+      "source": "test:editable-toggle",
+      "target": "invariant:toggle",
+      "relation": "covers",
+      "evidence": "Exact before/after assertion; read-only refusal is the declared variance"
+    },
+    {
+      "source": "instance:editable",
+      "target": "test:editable-roundtrip",
+      "relation": "contains"
+    },
+    {
+      "source": "instance:editable",
+      "target": "test:editable-missing",
+      "relation": "contains"
+    },
+    {
+      "source": "instance:readonly",
+      "target": "test:readonly-display",
+      "relation": "contains"
+    },
+    {
+      "source": "instance:readonly",
+      "target": "test:readonly-refusal",
+      "relation": "contains"
+    },
+    {
+      "source": "test:readonly-refusal",
+      "target": "invariant:toggle",
+      "relation": "covers",
+      "evidence": "Exact before/after assertion; read-only refusal is the declared variance"
+    },
+    {
+      "source": "repo:fixture",
+      "target": "test:store-validation",
+      "relation": "contains"
+    },
+    {
+      "source": "repo:fixture",
+      "target": "test:store-isolation",
+      "relation": "contains"
+    },
+    {
+      "source": "test:editable-display",
+      "target": "function:editable-render",
+      "relation": "covers"
+    },
+    {
+      "source": "test:editable-toggle",
+      "target": "function:editable-toggle",
+      "relation": "covers"
+    },
+    {
+      "source": "test:editable-toggle",
+      "target": "function:store-set",
+      "relation": "covers"
+    },
+    {
+      "source": "test:editable-roundtrip",
+      "target": "function:editable-toggle",
+      "relation": "covers"
+    },
+    {
+      "source": "test:editable-missing",
+      "target": "function:editable-toggle",
+      "relation": "covers"
+    },
+    {
+      "source": "test:readonly-display",
+      "target": "function:readonly-render",
+      "relation": "covers"
+    },
+    {
+      "source": "test:readonly-refusal",
+      "target": "function:readonly-toggle",
+      "relation": "covers"
+    },
+    {
+      "source": "test:store-validation",
+      "target": "function:store-set",
+      "relation": "covers"
+    },
+    {
+      "source": "test:store-isolation",
+      "target": "function:store-snapshot",
+      "relation": "covers"
+    },
+    {
+      "source": "function:editable-render",
+      "target": "function:store-snapshot",
+      "relation": "invokes"
+    },
+    {
+      "source": "function:editable-toggle",
+      "target": "function:store-snapshot",
+      "relation": "invokes"
+    },
+    {
+      "source": "function:readonly-render",
+      "target": "function:store-snapshot",
+      "relation": "invokes"
+    },
+    {
+      "source": "function:editable-toggle",
+      "target": "function:store-set",
+      "relation": "invokes"
+    },
+    {
+      "source": "function:store-set",
+      "target": "data:reviews",
+      "relation": "writes"
+    },
+    {
+      "source": "function:store-snapshot",
+      "target": "data:reviews",
+      "relation": "reads"
+    }
+  ],
+  "parity_groups": [
+    {
+      "id": "parity:review",
+      "capability": "capability:review",
+      "instances": [
+        "instance:editable",
+        "instance:readonly"
+      ],
+      "shared_invariants": [
+        "invariant:display",
+        "invariant:toggle"
+      ],
+      "variances": [
+        {
+          "instance": "instance:readonly",
+          "invariant": "invariant:toggle",
+          "reason": "The read-only summary must refuse writes and preserve saved state; permission is an intentional product behavior.",
+          "test": "test:readonly-refusal"
+        }
+      ]
+    }
+  ]
+}

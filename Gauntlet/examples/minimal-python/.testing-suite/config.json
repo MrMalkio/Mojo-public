@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "project": {
+    "id": "project:review-fixture",
+    "name": "Synthetic review fixture"
+  },
+  "repositories": [
+    {
+      "id": "repo:fixture",
+      "path": "."
+    }
+  ],
+  "policy": {
+    "full_suite_every_days": 7,
+    "always_include_critical": true
+  },
+  "runners": [
+    {
+      "id": "unittest",
+      "adapter": "unittest",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ]
+    }
+  ]
+}

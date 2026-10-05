@@ -1,0 +1,215 @@
+{
+  "skill_name": "testing-suite",
+  "schema_version": 1,
+  "execution_status": "not_run",
+  "description": "Declarative skill scenarios. Assertions are review criteria, not claimed runtime test results. Fixtures are synthetic and inline; execute against disposable projects when building a skill evaluation harness.",
+  "evals": [
+    {
+      "id": "bootstrap-preservation",
+      "skill": "bootstrap",
+      "prompt": "Install the suite in this existing Node project for Codex and Claude, including CI. Keep our existing conventions.",
+      "fixture": {
+        "project_files": {
+          "package.json": {"scripts": {"test": "jest --runInBand"}},
+          "package-lock.json": "existing lockfile",
+          "AGENTS.md": "existing project instructions",
+          "CLAUDE.md": "existing project instructions",
+          ".github/workflows/test.yml": "existing CI"
+        }
+      },
+      "expected_output": "Inspects instructions/manifests/CI, previews and applies bootstrap without replacing existing user files, uses the existing npm test runner, installs both agent skill trees, validates/indexes the scaffold, and reports remaining product mapping and execution gaps.",
+      "assertions": [
+        {"text": "Existing agent instructions, package files, tests, and CI contents are preserved.", "passed": null, "evidence": null},
+        {"text": "Detected runner derives from the real test script and unambiguous package manager.", "passed": null, "evidence": null},
+        {"text": "No test result or production capability coverage is invented by installation.", "passed": null, "evidence": null}
+      ]
+    },
+    {
+      "id": "bootstrap-conflicting-owned-file",
+      "skill": "bootstrap",
+      "prompt": "Re-bootstrap this project; its testing-suite config was customized.",
+      "fixture": {"existing_managed_file": ".testing-suite/config.json", "content": "different reviewed runner settings"},
+      "expected_output": "Preflights the conflict, preserves the customized file, reads old/new settings, and proposes or performs a deliberate compatible adaptation within the authorized scope instead of deleting the file to force bootstrap.",
+      "assertions": [
+        {"text": "Conflicting existing content is preserved and named in the report.", "passed": null, "evidence": null},
+        {"text": "No blanket approval barrier is invented for reversible adaptation already authorized.", "passed": null, "evidence": null}
+      ]
+    },
+    {
+      "id": "bidirectional-capability-map",
+      "skill": "map-system",
+      "prompt": "Map how notification preferences work and tell me what changing the save function affects.",
+      "fixture": {
+        "instances": ["settings toggle", "onboarding checkbox", "viewer summary"],
+        "source": {"path": "src/preferences.py", "symbol": "save_preference", "anchor": "preference-save"},
+        "provider": {"repo": "preference-api", "path": "api/preferences.py"},
+        "data": "notification preference record"
+      },
+      "expected_output": "Builds stable capability/instance/action/source/data/provider/invariant/test entities from inspected evidence and traces both product-to-code and code-to-product, leaving unknown coverage visible.",
+      "assertions": [
+        {"text": "All three implementations are first-class instance nodes.", "passed": null, "evidence": null},
+        {"text": "Dependency edges run from the consumer toward the provider and support reverse impact.", "passed": null, "evidence": null},
+        {"text": "Paths/symbols/anchors and edge evidence are recorded without claiming inferred semantics are verified.", "passed": null, "evidence": null}
+      ]
+    },
+    {
+      "id": "anchor-movement-and-drift",
+      "skill": "map-system",
+      "prompt": "A refactor moved this logical block. Refresh the map and its debug coordinates.",
+      "fixture": {"graph_id": "block:preference-save", "anchor": "preference-save", "old_line": 20, "new_line": 74, "second_duplicate_anchor": true},
+      "expected_output": "Preserves stable identity while locating the moved block, detects duplicate anchor ambiguity, repairs it from inspected source, re-indexes, and treats old coordinates/evidence as stale.",
+      "assertions": [
+        {"text": "Current coordinates are resolved from source, not copied from the old line number.", "passed": null, "evidence": null},
+        {"text": "Duplicate or unresolved anchors cannot justify targeted green evidence.", "passed": null, "evidence": null}
+      ]
+    },
+    {
+      "id": "pre-edit-impact-plan",
+      "skill": "plan-impact",
+      "prompt": "Change preference defaults for new users. Plan the impact before editing.",
+      "fixture": {"branch_commits": 3, "affected_instances": ["settings", "onboarding"], "affected_provider": "preference API", "always_required_tests": ["critical permission test", "previously failing contract test", "new default test"]},
+      "expected_output": "Chooses a baseline covering all branch commits, traces instances/data/provider dependencies/invariants, records the intended default behavior, and selects all mandatory critical/new/failing coverage before making authorized edits.",
+      "assertions": [
+        {"text": "Impact planning precedes edits and uses a complete branch baseline.", "passed": null, "evidence": null},
+        {"text": "Critical, new, and failing tests remain selected outside local impact.", "passed": null, "evidence": null},
+        {"text": "Final evidence selection is regenerated after edits from the complete diff.", "passed": null, "evidence": null}
+      ]
+    },
+    {
+      "id": "unmapped-change-full-fallback",
+      "skill": "plan-impact",
+      "prompt": "Only run what this change needs; a new event handler isn't mapped yet.",
+      "fixture": {"changed_files": ["src/new_event.py"], "mapped": false, "configured_runners": ["unit", "integration"]},
+      "expected_output": "Reports uncertain impact, widens to full configured runner scope, repairs mapping where evidence supports it, and retains the missing event-handler coverage gap.",
+      "assertions": [
+        {"text": "Unmapped source cannot yield a trusted empty targeted selection.", "passed": null, "evidence": null},
+        {"text": "Full execution and missing semantic coverage are reported separately.", "passed": null, "evidence": null}
+      ]
+    },
+    {
+      "id": "config-lock-and-cadence",
+      "skill": "plan-impact",
+      "prompt": "A lockfile changed. The targeted mapping still looks current. Can we verify this?",
+      "fixture": {"changed_files": ["package-lock.json"], "index_current": true, "last_full_run_days_ago": 30, "full_suite_every_days": 7},
+      "expected_output": "Requires full configured scope because dependency changes and overdue cadence invalidate narrow selection safety, retains selection reasons, and runs the appropriate configured suites.",
+      "assertions": [
+        {"text": "Both lock change and due full-run cadence are identified as widening reasons.", "passed": null, "evidence": null},
+        {"text": "No unrelated framework is installed to satisfy this task.", "passed": null, "evidence": null}
+      ]
+    },
+    {
+      "id": "meaningful-tests-and-fixtures",
+      "skill": "design-tests",
+      "prompt": "Add regression coverage for a permission bug in saving preferences.",
+      "fixture": {"intended_behavior": "viewer may read but cannot write", "existing_framework": "unittest", "bad_candidate": "assert True", "available_data": "production export with personal fields"},
+      "expected_output": "Uses existing unittest conventions, synthetic isolated data, meaningful permission/state assertions and coverage mappings, and executes the tests instead of treating stubs or production fixtures as proof.",
+      "assertions": [
+        {"text": "Assertions detect unauthorized writes and verify the intended allowed behavior.", "passed": null, "evidence": null},
+        {"text": "Production data and secrets are excluded from fixtures and reports.", "passed": null, "evidence": null},
+        {"text": "Product permission behavior is not weakened to make a generated assertion pass.", "passed": null, "evidence": null}
+      ]
+    },
+    {
+      "id": "source-bound-gate",
+      "skill": "run-evidence",
+      "prompt": "The suite passed, then I made one more source edit. Report the final verification.",
+      "fixture": {"old_evidence": {"evidence": "runner", "source_hash": "before-edit"}, "current_source_hash": "after-edit", "selected_tests": ["test:save"]},
+      "expected_output": "Treats the old pass as historical, regenerates current index/selection, executes needed runners, and gates matching current provenance before reporting verified scope.",
+      "assertions": [
+        {"text": "Evidence from before the edit is not presented as a current pass.", "passed": null, "evidence": null},
+        {"text": "Exact revision/source and graph/selection scope are included in the result.", "passed": null, "evidence": null}
+      ]
+    },
+    {
+      "id": "missing-skipped-and-manual-results",
+      "skill": "run-evidence",
+      "prompt": "Mark this selection green. One test was skipped, another has no result, and I wrote passed in a report.",
+      "fixture": {"selected_tests": ["test:passed", "test:skipped", "test:missing"], "observations": {"test:passed": "manual prose pass", "test:skipped": "skipped"}},
+      "expected_output": "Records outside observations only as manual where useful, retains skipped/missing gaps, refuses to claim a verified passing gate, and executes or repairs required coverage where possible.",
+      "assertions": [
+        {"text": "Skipped and missing required tests do not count as passed.", "passed": null, "evidence": null},
+        {"text": "Manual records or prose cannot become runner-verified gate evidence.", "passed": null, "evidence": null}
+      ]
+    },
+    {
+      "id": "flaky-retry-history",
+      "skill": "run-evidence",
+      "prompt": "The first run failed but the retry passed. Tell me the result.",
+      "fixture": {"attempts": [{"attempt": 1, "status": "failed", "artifact": "failure.log"}, {"attempt": 2, "status": "passed", "artifact": "retry.log"}]},
+      "expected_output": "Reports both attempts and their exact scope/artifacts, identifies the flaky observation, and investigates evidence-supported nondeterminism without erasing the failure.",
+      "assertions": [
+        {"text": "The passing retry is not reported as an unqualified clean pass.", "passed": null, "evidence": null},
+        {"text": "First failure and retry artifacts remain accessible.", "passed": null, "evidence": null}
+      ]
+    },
+    {
+      "id": "cross-repository-contract",
+      "skill": "contracts",
+      "prompt": "The API response default changed. Verify consumers are compatible.",
+      "fixture": {"consumer_repo": "web", "provider_repo": "preferences-api", "consumer_contract_generated": true, "provider_verification": false, "unavailable_consumer_repo": "mobile"},
+      "expected_output": "Maps consumer/provider revisions and dependencies, runs actual provider verification for authored consumer contracts, traces product impact, and reports the unavailable mobile consumer as unverified.",
+      "assertions": [
+        {"text": "Generated consumer contract is not conflated with provider verification.", "passed": null, "evidence": null},
+        {"text": "Both sides' revisions and unresolved external boundary are reported.", "passed": null, "evidence": null},
+        {"text": "No contract broker publication or setup is invented as a default action.", "passed": null, "evidence": null}
+      ]
+    },
+    {
+      "id": "intentional-instance-variance",
+      "skill": "instance-parity",
+      "prompt": "Ensure settings, onboarding, and viewer summary have notification preference parity.",
+      "fixture": {"instances": {"settings": "toggle writes preference", "onboarding": "checkbox writes preference", "viewer": "read-only summary"}, "variance_reason": "viewer role has no write permission", "variance_test": "test:viewer-cannot-write"},
+      "expected_output": "Checks shared observable semantics while retaining different widgets and a justified tested read-only variance, runs mapped behavior tests, and reports unknown invariant-by-instance cells.",
+      "assertions": [
+        {"text": "Widget differences alone are not treated as parity defects.", "passed": null, "evidence": null},
+        {"text": "Read-only variance records instance, invariant, reason, and real test.", "passed": null, "evidence": null},
+        {"text": "The parity declaration checker is not described as browser execution.", "passed": null, "evidence": null}
+      ]
+    },
+    {
+      "id": "unexpected-state-diff",
+      "skill": "state-diff",
+      "prompt": "Saving a notification preference unexpectedly changed the billing account. Find it.",
+      "fixture": {"before": {"preferences": {"notifications": false}, "billing": {"owner": "synthetic-user-a"}}, "after": {"preferences": {"notifications": true}, "billing": {"owner": "synthetic-user-b"}}, "allowlist": ["/preferences/notifications"]},
+      "expected_output": "Reports /billing/owner as unexpected, preserves the narrow predefined allowlist, traces writers/dependencies to source, and uses an assertion to verify the expected preference value separately.",
+      "assertions": [
+        {"text": "Only the exact allowed pointer is permitted; observed unexpected paths are not added automatically.", "passed": null, "evidence": null},
+        {"text": "Allowed diff is not treated as proof the required value was written.", "passed": null, "evidence": null},
+        {"text": "Snapshots are supplied bounded JSON, not claimed automatic database capture.", "passed": null, "evidence": null}
+      ]
+    },
+    {
+      "id": "exact-debug-coordinates",
+      "skill": "diagnose",
+      "prompt": "Diagnose the failed save test and show the implementation location and user impact.",
+      "fixture": {"failure_test": "test:save", "invariant": "invariant:chosen-value-persists", "symbol": "save_preference", "anchor": "preference-save", "current_line": 74, "affected_instances": ["settings", "onboarding"]},
+      "expected_output": "Inspects failure artifacts and current indexed source, identifies exact repository/path/symbol/anchor/line, explains the affected invariant and instances, repairs the confirmed cause, and reruns current impact coverage.",
+      "assertions": [
+        {"text": "Confirmed cause is supported by actual failure/source evidence rather than a name-based guess.", "passed": null, "evidence": null},
+        {"text": "Both source coordinates and product behavior are included.", "passed": null, "evidence": null}
+      ]
+    },
+    {
+      "id": "maintenance-without-schedule",
+      "skill": "maintain",
+      "prompt": "Refresh our testing suite after a refactor and inspect its health.",
+      "fixture": {"removed_symbol": "old_save", "renamed_instance": "settings-v2", "uncovered_invariant": "invariant:no-billing-write", "user_requested_recurring_schedule": false},
+      "expected_output": "Refreshes coordinates and reviewed relationships, preserves continuing stable identity, exposes uncovered behavior, executes appropriate full scope, and reports current evidence without creating an unrequested automation.",
+      "assertions": [
+        {"text": "Valid JSON or a targeted pass alone is not called product-wide health.", "passed": null, "evidence": null},
+        {"text": "No recurring schedule is created without a user request.", "passed": null, "evidence": null}
+      ]
+    },
+    {
+      "id": "external-tool-boundaries",
+      "skill": "testing-suite",
+      "prompt": "Show which integrations are ready now and how we'd use Playwright, Pact, Nx, and Testmon.",
+      "fixture": {"installed_external_tools": [], "runtime_version": "0.1.0"},
+      "expected_output": "Describes native Python AST/comment-anchor, JSON control-layer, and verbose unittest/pytest case-observation features accurately. Presents external tool recipes as optional project workflows, explains that unsupported Node/framework output cannot satisfy the strict gate, and does not install an entire ecosystem unasked.",
+      "assertions": [
+        {"text": "Framework filters, brokers, browser runners, and dashboard importers are not advertised as built-in integrations; supported observation is limited to verbose unittest/pytest cases.", "passed": null, "evidence": null},
+        {"text": "Merged Jest coverage is not presented as per-test coverage and Nx task impact is not product-flow proof.", "passed": null, "evidence": null}
+      ]
+    }
+  ]
+}

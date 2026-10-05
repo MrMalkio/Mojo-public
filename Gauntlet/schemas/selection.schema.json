@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:mojo:testing-suite:selection:v1",
+  "title": "Testing suite selection v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "head",
+    "heads",
+    "graph_hash",
+    "config_hash",
+    "source_hash",
+    "index_hash",
+    "provenance_valid",
+    "mode",
+    "base",
+    "changed_files",
+    "changed_nodes",
+    "affected_nodes",
+    "selected_tests",
+    "reasons",
+    "test_reasons",
+    "confidence"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "head": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "heads": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    },
+    "graph_hash": {
+      "type": "string",
+      "minLength": 1
+    },
+    "config_hash": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_hash": {
+      "type": ["string", "null"],
+      "minLength": 1
+    },
+    "index_hash": {
+      "type": ["string", "null"],
+      "minLength": 1
+    },
+    "provenance_valid": {
+      "type": "boolean"
+    },
+    "mode": {
+      "enum": [
+        "FULL",
+        "TARGETED"
+      ]
+    },
+    "base": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "changed_files": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "changed_nodes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^\\S+$"
+      }
+    },
+    "affected_nodes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^\\S+$"
+      }
+    },
+    "selected_tests": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^\\S+$"
+      },
+      "uniqueItems": true
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "message"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "minLength": 1
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "test_reasons": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "confidence": {
+      "enum": [
+        "high",
+        "fallback"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

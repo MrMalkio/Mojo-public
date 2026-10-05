@@ -1,0 +1,199 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:mojo:testing-suite:results:v1",
+  "title": "Testing suite results v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "head",
+    "heads",
+    "graph_hash",
+    "config_hash",
+    "source_hash",
+    "index_hash",
+    "provenance_valid",
+    "evidence",
+    "selection_hash",
+    "mode",
+    "results",
+    "runners"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "head": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "heads": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    },
+    "graph_hash": {
+      "type": "string",
+      "minLength": 1
+    },
+    "config_hash": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_hash": {
+      "type": "string",
+      "minLength": 1
+    },
+    "index_hash": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provenance_valid": {
+      "type": "boolean"
+    },
+    "evidence": {
+      "enum": [
+        "runner",
+        "manual"
+      ]
+    },
+    "selection_hash": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mode": {
+      "enum": [
+        "FULL",
+        "TARGETED"
+      ]
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^\\S+$"
+          },
+          "status": {
+            "enum": [
+              "passed",
+              "failed",
+              "skipped"
+            ]
+          },
+          "runner": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^\\S+$"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "runners": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "command",
+          "status",
+          "exit_code",
+          "adapter",
+          "observed_count",
+          "observed_tests",
+          "verified",
+          "zero_tests"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^\\S+$"
+          },
+          "command": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "status": {
+            "enum": [
+              "passed",
+              "failed",
+              "skipped"
+            ]
+          },
+          "exit_code": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "started_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "finished_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "stdout_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "stderr_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "adapter": {
+            "type": ["string", "null"]
+          },
+          "observed_count": {
+            "type": ["integer", "null"],
+            "minimum": 0
+          },
+          "observed_tests": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "status"],
+              "properties": {
+                "id": {"type": "string", "minLength": 1},
+                "status": {"enum": ["passed", "failed", "skipped"]}
+              },
+              "additionalProperties": true
+            }
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "zero_tests": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

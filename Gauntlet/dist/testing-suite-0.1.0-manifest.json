@@ -1,0 +1,217 @@
+{
+  "name": "testing-suite",
+  "version": "0.1.0",
+  "file_count": 50,
+  "files": {
+    ".gitignore": {
+      "size_bytes": 88,
+      "sha256": "7b5875429e47db1c1e2843413dbd6fc083f841b7f01a43aba91c24fb61692aa2"
+    },
+    "README.md": {
+      "size_bytes": 7304,
+      "sha256": "c539da9f5f7b6ed44a32819e593d5b48eac2895486ac2d95d63fa8ed108901f7"
+    },
+    "SKILL.md": {
+      "size_bytes": 5871,
+      "sha256": "6cce3cdef4eb8d22a9bebabb01cd892d9f5c45553904fcda88593bf81879b1bf"
+    },
+    "TEST-MATRIX.md": {
+      "size_bytes": 3621,
+      "sha256": "861adedc129f87790d1fa77ad969d1c04eca3cea9282f093280e7c35bfc20619"
+    },
+    "agent/INSTALL.md": {
+      "size_bytes": 4148,
+      "sha256": "442790ec047a79c7fb944faf7b0e821fd9bc4385cdc14296cb028b71796182e2"
+    },
+    "evals/evals.json": {
+      "size_bytes": 16668,
+      "sha256": "45a9979c78c518fb7b76f1b3de48dd77a3e829983d7f123c2d7d53678f590cac"
+    },
+    "examples/minimal-python/.gitignore": {
+      "size_bytes": 57,
+      "sha256": "1332ae65bb1bdb2b219b0d48337ace7df871f58471080d46e53231321b408c52"
+    },
+    "examples/minimal-python/.testing-suite/config.json": {
+      "size_bytes": 520,
+      "sha256": "4ed3fa1a2cef8030596311d0e97854c0c7336e8e20892f968f9dd659d6fc4c5c"
+    },
+    "examples/minimal-python/.testing-suite/graph.json": {
+      "size_bytes": 11140,
+      "sha256": "a2223cf72d50e6117fad8eeda74bfc86a38a11f66bbd5faf01f0227bd83371a8"
+    },
+    "examples/minimal-python/README.md": {
+      "size_bytes": 2921,
+      "sha256": "51a2af9b624324d971b8c760ddc267a27aacb844d63bf6255302c1bf7720bdff"
+    },
+    "examples/minimal-python/inputs/allowed-pointers.json": {
+      "size_bytes": 21,
+      "sha256": "a29a9bea347812f185685b8ce9ec7c521145cd5ec739fa21cf5ea2547f4e4391"
+    },
+    "examples/minimal-python/inputs/parity-missing-coverage.json": {
+      "size_bytes": 10933,
+      "sha256": "c32b635796daebcd7f7e07f7457dfc30c49d234df410be3d578098b9e5fd592a"
+    },
+    "examples/minimal-python/inputs/state-after-allowed.json": {
+      "size_bytes": 176,
+      "sha256": "dc7bf0d45088ebe1066ce232d477c4a3c3161fca234215f663f281cb258a4e9b"
+    },
+    "examples/minimal-python/inputs/state-after-unexpected.json": {
+      "size_bytes": 178,
+      "sha256": "1378bff7f38eba868b0d75c82d416e865e6cb621b813ab0a58f3744d06043129"
+    },
+    "examples/minimal-python/inputs/state-before.json": {
+      "size_bytes": 177,
+      "sha256": "f4d18f772b52285fcc29fd24b15e55567a382a52ca801da58f6db149271af74c"
+    },
+    "examples/minimal-python/pyproject.toml": {
+      "size_bytes": 93,
+      "sha256": "3a26f5727f95679b8011c62e017457bf7cfd0c2bb19b0830ea6a81f85848e066"
+    },
+    "examples/minimal-python/review.py": {
+      "size_bytes": 1488,
+      "sha256": "955f5d6c90eeadf34aa65be23651e1fc9da914f3753c4ece3c2651ceff0648cd"
+    },
+    "examples/minimal-python/tests/test_review.py": {
+      "size_bytes": 2510,
+      "sha256": "627b44553cf09d55a5b9368bb97eca9c9f5d6df19a7f77a5a39d90df29d03248"
+    },
+    "protocols/EVIDENCE.md": {
+      "size_bytes": 5875,
+      "sha256": "26802b7d07ac2bf8817d8af8abc78c667015e2c0ee37aed354c5ac4e37b7ebeb"
+    },
+    "protocols/GRAPH-CONVENTIONS.md": {
+      "size_bytes": 5708,
+      "sha256": "ea1c630e0467526430ee16011e425922707a2c21ce78d7d0f26f0bbd3246a577"
+    },
+    "protocols/SELECTION-SAFETY.md": {
+      "size_bytes": 3737,
+      "sha256": "88a6d2cb1a3380d9c3ff7de6f27132e93740f33a7ebc81fa3f8afb6aaa33cc6f"
+    },
+    "references/ADAPTERS.md": {
+      "size_bytes": 10288,
+      "sha256": "fe444513cd0c1f57acf5ae96f3a420bc231c998b6a28c9f38b8523b7c3594832"
+    },
+    "references/REQUIREMENTS.md": {
+      "size_bytes": 3172,
+      "sha256": "06704173d578400014889726a70b3247422e6f5f5c3d6d56c098f99e02f60d1f"
+    },
+    "references/SOURCES.md": {
+      "size_bytes": 8686,
+      "sha256": "9de693778592568648d28ba7fd5a544c7c576507bda3cc20677099708978c70e"
+    },
+    "schemas/config.schema.json": {
+      "size_bytes": 2450,
+      "sha256": "f0ab45302a7204dc2b0760aa5afd23170cac3ea151249df118b24a3ceba5e1ab"
+    },
+    "schemas/graph.schema.json": {
+      "size_bytes": 5593,
+      "sha256": "03d44e30d345f3090ca00252172952ed3f278487ed57f3b183d1a889eb502d46"
+    },
+    "schemas/index.schema.json": {
+      "size_bytes": 6621,
+      "sha256": "c597452308c8a8a4a9d816c42fe0d4de9321fbaf89742aa02794dfd9e2108cb0"
+    },
+    "schemas/results.schema.json": {
+      "size_bytes": 4159,
+      "sha256": "1b51d72baf691e18aa86395796cee38cabd704928f1160156b3776139099ee8d"
+    },
+    "schemas/selection.schema.json": {
+      "size_bytes": 2791,
+      "sha256": "388a2a4808686bb5e5973608b7f2a12df190cc8400b320cbe5b62878b2394878"
+    },
+    "scripts/bootstrap.py": {
+      "size_bytes": 27153,
+      "sha256": "0e16582b341470b773ed988ba767a6f44f6440a35034863c9add4165d12cd86c"
+    },
+    "scripts/package_skill.py": {
+      "size_bytes": 5423,
+      "sha256": "3bd60a0099a9a6da181adc814537cefc863991033560b251a5376e0eab032c7a"
+    },
+    "scripts/suite.py": {
+      "size_bytes": 6615,
+      "sha256": "a4935e02c73826396a229eb5618016af174aa4cd4d087895391667ad17090b49"
+    },
+    "scripts/suite_core.py": {
+      "size_bytes": 66334,
+      "sha256": "05b176d1ee2e3e09c0bf84506fc12cb1a053f9616325101a52afdaadc5b7ebc3"
+    },
+    "skills/README.md": {
+      "size_bytes": 1630,
+      "sha256": "be11078899f807ae182dc3045c2b72e207006521a5b9995efda370c1dbbb3f78"
+    },
+    "skills/bootstrap/SKILL.md": {
+      "size_bytes": 4483,
+      "sha256": "2c8e688d35c59c53589e69ce92b905b0236949222ec158a52600da6e2dfbcab2"
+    },
+    "skills/contracts/SKILL.md": {
+      "size_bytes": 3614,
+      "sha256": "bd7584ed3ef0e30ec542910ea2880778ddb2bda024aaaaf29ff10260c64deb62"
+    },
+    "skills/design-tests/SKILL.md": {
+      "size_bytes": 4028,
+      "sha256": "01233310ddd2e5524ff222c7c59de58814e4b47ef5c41f11cbb9a59b66706482"
+    },
+    "skills/diagnose/SKILL.md": {
+      "size_bytes": 3297,
+      "sha256": "4a17d231716e5740c19fb7980bbfaae4ee738ceef9b10b65ac31729184c0a0f5"
+    },
+    "skills/instance-parity/SKILL.md": {
+      "size_bytes": 3140,
+      "sha256": "d225b6f5ae5309738f13c07c7d42eb0fd2945cec667462680a2ebf3a47036101"
+    },
+    "skills/maintain/SKILL.md": {
+      "size_bytes": 3472,
+      "sha256": "0d663eb7a773c67bdaffa09cc0cb7c9a6f717c5581ad06ca5d0e5bccc18d8120"
+    },
+    "skills/map-system/SKILL.md": {
+      "size_bytes": 3525,
+      "sha256": "9647e79d2f2b39efd4ccadf9f7815bb1b5c2bc482da3197a8cee6bcda05ccf4c"
+    },
+    "skills/plan-impact/SKILL.md": {
+      "size_bytes": 3270,
+      "sha256": "661a58cfbd8370f75e3a8284236f345fa52add56b0bdd233233fb383326ad248"
+    },
+    "skills/run-evidence/SKILL.md": {
+      "size_bytes": 5729,
+      "sha256": "34c76b49ea2d4d2402a7857613c930e8a684e89799da8c36f2be1dc29cf4ea5d"
+    },
+    "skills/state-diff/SKILL.md": {
+      "size_bytes": 3420,
+      "sha256": "11c3b75901aee900bfead54ed8dd4f6162fe6e44a29008821f391baf4acb454a"
+    },
+    "tests/test_bootstrap.py": {
+      "size_bytes": 14728,
+      "sha256": "b7b34bc5ff9d5fc506636fefde5bc2fce974d9476e12d086272d8fcedcc45451"
+    },
+    "tests/test_core.py": {
+      "size_bytes": 16906,
+      "sha256": "d4dd07b33e3c38241c6b1c30d8759b6994050e12c72843cd83dc68ec5c509478"
+    },
+    "tests/test_distribution.py": {
+      "size_bytes": 3926,
+      "sha256": "6ac634951f127ec5ce1698580df969d58894efa5440b20d8ff904408a7865cd7"
+    },
+    "tests/test_packaging.py": {
+      "size_bytes": 2147,
+      "sha256": "6b8604232e127252b9d8ed0060ed1f5a62e33082a7018e8ad0af8205da1d885e"
+    },
+    "tests/test_review_regressions.py": {
+      "size_bytes": 7858,
+      "sha256": "1c8b1e49cdbadcfb0e7ab5c5af3b4217772f56d923065e3cb85103d2ff0a9bf8"
+    },
+    "tests/test_skill_structure.py": {
+      "size_bytes": 1984,
+      "sha256": "ddcc8199406b8199b957be5cecfce7a335af34d3509c22c62bf6b6947831f555"
+    }
+  },
+  "archives": {
+    "testing-suite-0.1.0.tar.gz": {
+      "size_bytes": 81550,
+      "sha256": "cb1dc23c28d6a7bfd5325d4cbe529148be26bb1958da6edd433fdfa1ca3d8d04"
+    },
+    "testing-suite-0.1.0.skill": {
+      "size_bytes": 107635,
+      "sha256": "1f5e386a33bef0d61c079ac7c431364fbc5e5d8ef079acf2fb70367f982d0041"
+    }
+  }
+}
